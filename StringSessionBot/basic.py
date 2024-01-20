@@ -1,4 +1,5 @@
-from data import Data
+from Data import Data
+import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
@@ -14,8 +15,35 @@ async def start(bot: Client, msg: Message):
     mention = user.mention
     await bot.send_message(
         msg.chat.id,
+        text="** شكرا لاستمرارك معنا**",
+    )
+    await asyncio.sleep(2)
+    
+    await bot.send_message(
+        msg.chat.id,
+        text="**كل شيء اصبح بين يديك **",
+    )
+    await asyncio.sleep(2)
+
+    await bot.send_message(
+        msg.chat.id,
+        text="**فيزات**",
+    )
+    await asyncio.sleep(2)
+    await bot.send_message(
+        msg.chat.id,
+        text="**ايميلات**",
+    )
+    await asyncio.sleep(2)
+    await bot.send_message(
+        msg.chat.id,
+        text="**روابط التنصيب لكافة السورسات**",
+    )
+    await asyncio.sleep(3)
+    await bot.send_message(
+        msg.chat.id,
         Data.START.format(msg.from_user.mention, mention),
-        reply_markup=InlineKeyboardMarkup(Data.buttons)
+        reply_markup=InlineKeyboardMarkup(Data.buttons),
     )
 
 
@@ -23,8 +51,7 @@ async def start(bot: Client, msg: Message):
 @Client.on_message(filter("help"))
 async def _help(bot: Client, msg: Message):
     await bot.send_message(
-        msg.chat.id, Data.HELP,
-        reply_markup=InlineKeyboardMarkup(Data.home_buttons)
+        msg.chat.id, Data.HELP, reply_markup=InlineKeyboardMarkup(Data.home_buttons)
     )
 
 
@@ -34,6 +61,17 @@ async def about(bot: Client, msg: Message):
     await bot.send_message(
         msg.chat.id,
         Data.ABOUT,
+        disable_web_page_preview=True,
+        reply_markup=InlineKeyboardMarkup(Data.home_buttons),
+    )
+
+
+# Repo Message
+@Client.on_message(filter("repo"))
+async def repo(bot, msg):
+    await bot.send_message(
+        msg.chat.id,
+        Data.REPO,
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(Data.home_buttons),
     )
