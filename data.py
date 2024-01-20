@@ -2,61 +2,71 @@ from pyrogram.types import InlineKeyboardButton
 
 
 class Data:
-    generate_single_button = [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")]
+    generate_single_button = [
+        InlineKeyboardButton("بدء استخراج الجلسة", callback_data="generate")
+    ]
 
     home_buttons = [
         generate_single_button,
-        [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")]
+        [InlineKeyboardButton(text="父 العودة إلى الصفحة الرئيسية", callback_data="home")],
     ]
 
     generate_button = [generate_single_button]
 
     buttons = [
         generate_single_button,
-        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/StarkBots/7")],
         [
-            InlineKeyboardButton("How to Use ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+            InlineKeyboardButton(
+                "لاشيء ", url="https://t.me/jepthon"
+            )
         ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")],
+        [
+            InlineKeyboardButton("كيفية استخدام البوت ?", callback_data="help"),
+            InlineKeyboardButton("حـول", callback_data="about"),
+        ],
+        [InlineKeyboardButton("المطور", url="https://t.me/jepthon")],
     ]
 
     START = """
-Hey {}
+أهلًا {} ♦
+ومرحبًا بك عزيزي في {}
+هذا البوت مخصص لاستخراج الجلسات
+إذا كنـت تريـد أن يكون حسـابك في أمـان تام فاختر بايروجـرام أمـا إذا كـان رقمك حقيقـي فاختر تيرمـكس
 
-Welcome to {}
-
-If you don't trust this bot, 
-1) stop reading this message
-2) delete this chat
-
-Still reading?
-You can use me to generate pyrogram (even version 2) and telethon string session. Use below buttons to learn more !
-
-By @StarkBots
     """
 
     HELP = """
-✨ **Available Commands** ✨
+ **الأوامر المتاحة**
 
-/about - About The Bot
-/help - This Message
-/start - Start the Bot
-/generate - Generate Session
-/cancel - Cancel the process
-/restart - Cancel the process
+/about - لحول البوت
+/help - لمساعدتك
+/start - لبدء البوت 
+/repo - لإعطاء ريبو البوت
+/generate - لاستخراج الجلسات 
+/cancel - لإلغاء الاستخراج 
+/restart - لترسيت اليوت
 """
 
+    # About Message
     ABOUT = """
-**About This Bot** 
+**حول البوت** 
 
-Telegram Bot to generate Pyrogram and Telethon string session by @StarkBots
+هذا هو بوت استخراج كود تيرمكس وبايروجرام  
 
-Source Code : [Click Here](https://github.com/StarkBotsIndustries/StringSessionBot)
-
-Framework : [Pyrogram](https://docs.pyrogram.org)
-
-Language : [Python](https://www.python.org)
-
-Developer : @StarkAgent
+قناة السورس : [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/CNN0N)
+لغة البرمجة : [ᴘʏʀᴏɢʀᴀᴍ](docs.pyrogram.org)
+اللغة : [ᴘʏᴛʜᴏɴ](www.python.org)
+المطور : @I0I0II 
     """
+
+    # Repo Message
+    REPO = """
+━━━━━━━━━━━━━━━━━━━━━━━━
+💥 أنا مشغل لكي أقوم باستخراج الجلسات 
+┏━━━━━━━━━━━━━━━━━┓
+┣★ المطور : [اضغط هنا](https://t.me/CNN0N )
+┣★ [سورس الجوكر](https://t.me/I0I0II )
+┗━━━━━━━━━━━━━━━━━┛
+💞 
+إذا كان لديك أي سؤال ، فراسل » المطور » [المطور] @I0I0II
+   """
