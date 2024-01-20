@@ -1,5 +1,4 @@
-from Data import Data
-import asyncio
+from data import Data
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
@@ -17,7 +16,7 @@ async def start(bot: Client, msg: Message):
         msg.chat.id,
         text="** شكرا لاستمرارك معنا**",
     )
-    await asyncio.sleep(2)
+    await asyncio.sleep(1)
     
     await bot.send_message(
         msg.chat.id,
@@ -29,17 +28,17 @@ async def start(bot: Client, msg: Message):
         msg.chat.id,
         text="**فيزات**",
     )
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     await bot.send_message(
         msg.chat.id,
         text="**ايميلات**",
     )
-    await asyncio.sleep(2)
+    await asyncio.sleep(4)
     await bot.send_message(
         msg.chat.id,
         text="**روابط التنصيب لكافة السورسات**",
     )
-    await asyncio.sleep(3)
+    await asyncio.sleep(5)
     await bot.send_message(
         msg.chat.id,
         Data.START.format(msg.from_user.mention, mention),
